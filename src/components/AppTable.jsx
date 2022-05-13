@@ -41,7 +41,7 @@ export function SelectColumnFilter({
 			>
 				<option value=''>All</option>
 				{options.map((option, i) => (
-					<option key={i} value={option}>
+					<option className='capitalize' key={i} value={option}>
 						{option[0].toUpperCase() + option.slice(1)}
 					</option>
 				))}

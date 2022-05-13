@@ -41,6 +41,12 @@ const CharactersTable = () => {
 							<ScrollingText>{selectedMovie.movie.opening_crawl}</ScrollingText>
 						</div>
 					)}
+					{selectedMovie && (
+						<h3 className='text-yellow mb-5 text-center'>
+							<span>All Characters: </span>
+							<span className='uppercase font-semibold'>{selectedMovie.movie.title}</span>
+						</h3>
+					)}
 					{selectedMovie?.characters && (
 						<Table columns={columns} data={selectedMovie.characters} />
 					)}
