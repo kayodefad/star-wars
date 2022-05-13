@@ -19,7 +19,7 @@ const CharactersTable = () => {
 					<span className='text-xs text-yellow'>{value.toUpperCase()}</span>
 				),
 				Filter: SelectColumnFilter,
-				filter: 'includes',
+				filter: 'equals',
 			},
 			{
 				Header: 'Height',

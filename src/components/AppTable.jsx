@@ -82,10 +82,11 @@ function Table({ columns, data }) {
 
 	// Calculate the sum of heights
 	const sumOfHeights = page
-		.map(({ values }) => +values.height)
+		.map(({ values }) => +values.height || 0)
 		.reduce((row1, row2) => row1 + row2, 0);
 
 	const heightInFeetAndInches = heightConverter(sumOfHeights);
+	const numberOfCharactersVisible = page.length;
 
 	// Render the UI for your table
 	return (
@@ -149,9 +150,7 @@ function Table({ columns, data }) {
 															role='cell'
 														>
 															{cell.column.Cell.name === 'defaultRenderer' ? (
-																<div>
-																	{cell.render('Cell')}
-																</div>
+																<div>{cell.render('Cell')}</div>
 															) : (
 																cell.render('Cell')
 															)}
@@ -171,6 +170,10 @@ function Table({ columns, data }) {
 			<div className='text-[#878787] text-sm'>
 				Sum of Heights: {sumOfHeights + ' cm'}
 				{`(${heightInFeetAndInches})`}
+			</div>
+			{/* Display Number of Characters Visible */}
+			<div className='text-[#878787] text-sm mt-2'>
+				Number of Characters Visible: {numberOfCharactersVisible}
 			</div>
 			{/* Pagination */}
 			<div className='py-3 flex items-center justify-between'>
