@@ -145,11 +145,11 @@ function Table({ columns, data }) {
 													return (
 														<td
 															{...cell.getCellProps()}
-															className='px-6 py-4 whitespace-nowrap'
+															className='px-6 py-4 whitespace-nowrap text-xs text-yellow'
 															role='cell'
 														>
 															{cell.column.Cell.name === 'defaultRenderer' ? (
-																<div className='text-xs text-yellow'>
+																<div>
 																	{cell.render('Cell')}
 																</div>
 															) : (
