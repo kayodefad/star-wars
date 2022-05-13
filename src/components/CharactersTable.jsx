@@ -16,7 +16,9 @@ const CharactersTable = () => {
 				Header: 'Gender',
 				accessor: 'gender',
 				Cell: ({ value }) => (
-					<span className='text-xs text-yellow'>{value.toUpperCase()}</span>
+					<span className='text-xs text-yellow'>
+						{value[0].toUpperCase() + value.slice(1)}
+					</span>
 				),
 				Filter: SelectColumnFilter,
 				filter: 'equals',
@@ -44,7 +46,9 @@ const CharactersTable = () => {
 					{selectedMovie && (
 						<h3 className='text-yellow mb-5 text-center'>
 							<span>All Characters: </span>
-							<span className='uppercase font-semibold'>{selectedMovie.movie.title}</span>
+							<span className='uppercase font-semibold'>
+								{selectedMovie.movie.title}
+							</span>
 						</h3>
 					)}
 					{selectedMovie?.characters && (
